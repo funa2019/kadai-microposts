@@ -10,7 +10,7 @@
                     <p class="mb-0">{!! nl2br(e($micropost->content)) !!}</p>
                 </div>
                 <div>
-                        @if (Auth::user()->is_favoriting($user->id))
+                        @if (Auth::user()->is_favoriting($micropost->id))
                             {!! Form::open(['route' => ['user.unfavorite', $micropost->id], 'method' => 'delete']) !!}
                                 {!! Form::submit('Unfavorite', ['class' => "btn btn-danger btn-sm "]) !!}
                             {!! Form::close() !!}
